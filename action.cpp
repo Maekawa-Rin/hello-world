@@ -3,7 +3,6 @@
 #include "GameTimer.h"
 #include"ObjectGenerator.h"
 
-//ƒeƒXƒg
 
 void Attack1_Update(Action* pThis);
 void Attack2_Update(Action* pThis);
