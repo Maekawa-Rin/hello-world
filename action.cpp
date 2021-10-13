@@ -3,6 +3,8 @@
 #include "GameTimer.h"
 #include"ObjectGenerator.h"
 
+//テスト
+
 void Attack1_Update(Action* pThis);
 void Attack2_Update(Action* pThis);
 void Heel_UPdate(Action* pThis);
@@ -185,7 +187,7 @@ void Magic_Update(Action* pThis)
 		Bflg->bstruct.battle_turn = Bname::Bplattakend;
 	}
 
-	
+
 }
 
 void FxSword_Update(Action* pThis)
@@ -213,7 +215,7 @@ void FxWindshot_Update(Action* pThis)
 	float time = pThis->time;
 	float direction = pThis->pOwner->charController.direction == DIR_RIGHT ? 1.0f : -1.0f; // 向きを保存
 
-	
+
 	if (time == 0.0f) {
 		pThis->isActive = true;//これをここで行うことでアニメーションを再開
 		pThis->pOwner->animator.time = 0;
@@ -241,7 +243,7 @@ void FxWindshot_Update(Action* pThis)
 		pThis->pOwner->posX = 3.0f;
 	}
 
-	
+
 }
 
 void FxWindshot_Update2left(Action* pThis)
@@ -305,28 +307,28 @@ void attac_magic(GameObject* gp, int num)//飛ばす魔法使用
 	// 魔法エフェクト初期化、1つ目がX、2つ目がY
 	//gpMagic->pOwner = gp;
 
-		Action_Set(&gp->action, ACTION_MAGIC);
-	
+	Action_Set(&gp->action, ACTION_MAGIC);
+
 	if (num == Bname::BPlayer)
 	{
 		/*gpMagic->localPosX = 0.5f;
 		gpMagic->localPosY = -0.35f;*/
-	
+
 		Action_Set(&gpMagic->action, ACTION_FX_WINDSHOT);
 		//gpMagic->animator.flip = FLIP_NONE;
-	
 
-		
+
+
 	}
 	if (num == Bname::BEnemy)
 	{
-		
+
 		Action_Set(&gpMagic->action, ACTION_FX_WINDSHOT2left);
 		//gpMagic->animator.flip = FLIP_HIRIZONTAL;
 		/*gpMagic->localPosX = -0.5f;
 		gpMagic->localPosY = -0.5f;*/
 
-		
+
 	}
 
 }
@@ -380,7 +382,7 @@ void heel_command(GameObject* gp, int num)//回復モーション
 
 void flee_command(GameObject* gp)//逃げの空白
 {
-	
+
 	Action_Set(&gp->action, ACTION_FLEE);
 
 }
